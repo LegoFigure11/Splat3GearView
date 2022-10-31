@@ -15,4 +15,4 @@ I believe this piece of software to be risk-free as it only reads from RAM and n
 * **RNG Prediction** 
 
 ## Credits and thanks
-Data files are sourced from [leanny/leanny.github.io](https://github.com/Leanny/leanny.github.io/tree/master/splat3)
+Data files are sourced from [Leanny/leanny.github.io](https://github.com/Leanny/leanny.github.io/tree/master/splat3)
