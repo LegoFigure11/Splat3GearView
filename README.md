@@ -1,5 +1,5 @@
 # Splat3GearView
-_A simple gear viewer for Splatoon 3_
+_A simple gear seed checker/viewer for Splatoon 3_
 
 ![image](https://user-images.githubusercontent.com/24732684/198869751-60b84a47-1ce2-45d6-b04a-49f3df2ba6a2.png)
 
