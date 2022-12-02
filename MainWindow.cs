@@ -120,10 +120,12 @@ namespace Splat3GearView
                 LabelLoadedClothes.Text = $"Clothes: {GearList.Where(g => g.GearType == (byte)GearTypes.Clothes).Count()}";
                 LabelLoadedShoes.Text = $"Shoes: {GearList.Where(g => g.GearType == (byte)GearTypes.Shoes).Count()}";
                 if (GearList.Count > 0)
+                {
+                    DisplayGear(index);
                     ButtonDumpGear.Enabled = true;
+                }
                 else ButtonDumpGear.Enabled = false;
                 Disconnect();
-                DisplayGear(index);
             }
             catch (SocketException err)
             {
