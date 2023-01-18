@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Splat3GearView.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <AssemblyVersion>0.0.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
