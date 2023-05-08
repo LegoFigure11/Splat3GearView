@@ -170,6 +170,7 @@ namespace Splat3GearView
             GearSeed.Text = $"{gear.Seed:X8}";
             GearRarity.Text = $"{gear.Rarity}";
             GearSlots.Text = $"{gear.Ability_SubCount}";
+            GearIcon.Image = Image.FromFile($".\\Resources\\Images\\Gear\\{gear.__RowID}.png");
             GearPrimaryAbility.Text = Strings.Abilities[gear.Ability_Primary];
             GearSubAbility1.Text = Strings.Abilities[gear.Ability_Sub1];
             GearSubAbility2.Text = gear.Rarity >= 1 ? Strings.Abilities[gear.Ability_Sub2] : "(None)";

@@ -63,6 +63,8 @@
             this.LabelLoadedShoes = new System.Windows.Forms.Label();
             this.GearName = new System.Windows.Forms.TextBox();
             this.LabelGearName = new System.Windows.Forms.Label();
+            this.GearIcon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelSwitchIP
@@ -143,7 +145,7 @@
             // 
             this.LabelLoadedGear.AutoSize = true;
             this.LabelLoadedGear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelLoadedGear.Location = new System.Drawing.Point(14, 119);
+            this.LabelLoadedGear.Location = new System.Drawing.Point(12, 305);
             this.LabelLoadedGear.Name = "LabelLoadedGear";
             this.LabelLoadedGear.Size = new System.Drawing.Size(85, 15);
             this.LabelLoadedGear.TabIndex = 7;
@@ -344,7 +346,7 @@
             // 
             this.LabelLoadedHeadgear.AutoSize = true;
             this.LabelLoadedHeadgear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelLoadedHeadgear.Location = new System.Drawing.Point(29, 134);
+            this.LabelLoadedHeadgear.Location = new System.Drawing.Point(192, 305);
             this.LabelLoadedHeadgear.Name = "LabelLoadedHeadgear";
             this.LabelLoadedHeadgear.Size = new System.Drawing.Size(70, 15);
             this.LabelLoadedHeadgear.TabIndex = 29;
@@ -354,7 +356,7 @@
             // 
             this.LabelLoadedClothes.AutoSize = true;
             this.LabelLoadedClothes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelLoadedClothes.Location = new System.Drawing.Point(40, 149);
+            this.LabelLoadedClothes.Location = new System.Drawing.Point(289, 305);
             this.LabelLoadedClothes.Name = "LabelLoadedClothes";
             this.LabelLoadedClothes.Size = new System.Drawing.Size(59, 15);
             this.LabelLoadedClothes.TabIndex = 30;
@@ -364,7 +366,7 @@
             // 
             this.LabelLoadedShoes.AutoSize = true;
             this.LabelLoadedShoes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelLoadedShoes.Location = new System.Drawing.Point(49, 164);
+            this.LabelLoadedShoes.Location = new System.Drawing.Point(375, 305);
             this.LabelLoadedShoes.Name = "LabelLoadedShoes";
             this.LabelLoadedShoes.Size = new System.Drawing.Size(50, 15);
             this.LabelLoadedShoes.TabIndex = 31;
@@ -388,11 +390,20 @@
             this.LabelGearName.TabIndex = 32;
             this.LabelGearName.Text = "Gear Name:";
             // 
+            // GearIcon
+            // 
+            this.GearIcon.Location = new System.Drawing.Point(47, 114);
+            this.GearIcon.Name = "GearIcon";
+            this.GearIcon.Size = new System.Drawing.Size(128, 128);
+            this.GearIcon.TabIndex = 34;
+            this.GearIcon.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 308);
+            this.ClientSize = new System.Drawing.Size(458, 329);
+            this.Controls.Add(this.GearIcon);
             this.Controls.Add(this.GearName);
             this.Controls.Add(this.LabelGearName);
             this.Controls.Add(this.LabelLoadedShoes);
@@ -431,6 +442,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,6 +484,7 @@
         private Label LabelLoadedShoes;
         private TextBox GearName;
         private Label LabelGearName;
+        private PictureBox GearIcon;
     }
 }
 
