@@ -28,6 +28,7 @@ namespace Splat3GearView.Structures
         // Derived Values
         public virtual string? Name { get; set; }
         public virtual string? Brand { get; set; }
+        public virtual string? IconURL { get; set; }
 
         // Methods
         private bool Validate()
@@ -49,6 +50,7 @@ namespace Splat3GearView.Structures
         {
             GearDataFromJSON g = GearData.FindGear(ID, GearType);
             Brand = GearData.MasterBrands[g.Brand!]!.GetValue<string>();
+            IconURL = $"https://raw.githubusercontent.com/Leanny/splat3/main/images/gear/{g.RowID}.png";
             if (GearType == (byte)GearTypes.Headgear)
                 Name = GearData.MasterHeadgear[g.MasterID!]!.GetValue<string>();
             else if (GearType == (byte)GearTypes.Clothes)
