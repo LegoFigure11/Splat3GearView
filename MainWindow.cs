@@ -4,6 +4,7 @@ using Splat3GearView.Structures;
 using SysBot.Base;
 using System.Net.Sockets;
 using System.Text.Json;
+using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace Splat3GearView
 {
@@ -57,6 +58,55 @@ namespace Splat3GearView
 
                 ButtonConnect.Enabled = false;
                 ButtonDisconnect.Enabled = true;
+                ConnectionStatusText.Text = "Reading gacha seed...";
+                GachaSeed state;
+                var offs = Offsets.GachaBlock;
+                var test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                while (test != GachaSeed.NORMAL_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
+                {
+                    offs += GachaSeed.STRUCT_SIZE;
+                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                }
+                var FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
+                state = new GachaSeed(FullSeed);
+
+                Gacha0.Text = $"{state.s0:X08}";
+                Gacha1.Text = $"{state.s1:X08}";
+                Gacha2.Text = $"{state.s2:X08}";
+                Gacha3.Text = $"{state.s3:X08}";
+
+                ConnectionStatusText.Text = "Reading fest seed...";
+                offs = Offsets.GachaBlock;
+                test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                while (test != GachaSeed.FEST_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
+                {
+                    offs += GachaSeed.STRUCT_SIZE;
+                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                }
+                FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
+                state = new GachaSeed(FullSeed);
+
+                Fest0.Text = $"{state.s0:X08}";
+                Fest1.Text = $"{state.s1:X08}";
+                Fest2.Text = $"{state.s2:X08}";
+                Fest3.Text = $"{state.s3:X08}";
+
+                ConnectionStatusText.Text = "Reading Murch seed...";
+                offs = Offsets.GachaBlock;
+                test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                while (test != GachaSeed.MURCH_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
+                {
+                    offs += GachaSeed.STRUCT_SIZE;
+                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
+                }
+                FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
+                state = new GachaSeed(FullSeed);
+
+                Murch0.Text = $"{state.s0:X08}";
+                Murch1.Text = $"{state.s1:X08}";
+                Murch2.Text = $"{state.s2:X08}";
+                Murch3.Text = $"{state.s3:X08}";
+
                 ConnectionStatusText.Text = "Reading gear...";
                 GearList.Clear();
                 uint pos = 0x40; // First gear is located at offset + 0x40

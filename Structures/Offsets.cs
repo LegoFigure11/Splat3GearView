@@ -6,5 +6,7 @@
         public const uint GearList_Head = 0xBE19A3B8;
         public const uint GearList_Clothes = GearList_Head + GearList_Offs;
         public const uint GearList_Shoes = GearList_Clothes + GearList_Offs;
+
+        public const uint GachaBlock = 0xBE268210;
     }
 }

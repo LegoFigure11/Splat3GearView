@@ -39,7 +39,7 @@ namespace Splat3GearView.Resources
                 }
                 if (g?["__RowId"] is JsonNode z)
                 {
-                    c.RowID = $"{z}";
+                    c.__RowID = $"{z}";
                     c.MasterID = $"{z}".Split("_")[1];
                 }
                 o.Add(c);
@@ -61,7 +61,7 @@ namespace Splat3GearView.Resources
     {
         public ushort ID { get; set; }
         public string? Brand { get; set; }
-        public string? RowID { get; set; }
+        public string? __RowID { get; set; }
         public string? MasterID { get; set; }
     }
 }

@@ -50,7 +50,7 @@ namespace Splat3GearView.Structures
         {
             GearDataFromJSON g = GearData.FindGear(ID, GearType);
             Brand = GearData.MasterBrands[g.Brand!]!.GetValue<string>();
-            __RowID = g.RowID;
+            __RowID = g.__RowID;
             if (GearType == (byte)GearTypes.Headgear)
                 Name = GearData.MasterHeadgear[g.MasterID!]!.GetValue<string>();
             else if (GearType == (byte)GearTypes.Clothes)

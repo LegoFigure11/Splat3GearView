@@ -64,7 +64,37 @@
             this.GearName = new System.Windows.Forms.TextBox();
             this.LabelGearName = new System.Windows.Forms.Label();
             this.GearIcon = new System.Windows.Forms.PictureBox();
+            this.Gacha0 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Gacha1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Gacha2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Gacha3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Fest0 = new System.Windows.Forms.TextBox();
+            this.Fest1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Fest3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Fest2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Murch0 = new System.Windows.Forms.TextBox();
+            this.Murch1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Murch3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Murch2 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelSwitchIP
@@ -398,11 +428,293 @@
             this.GearIcon.TabIndex = 34;
             this.GearIcon.TabStop = false;
             // 
+            // Gacha0
+            // 
+            this.Gacha0.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Gacha0.Location = new System.Drawing.Point(33, 22);
+            this.Gacha0.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Gacha0.Name = "Gacha0";
+            this.Gacha0.ReadOnly = true;
+            this.Gacha0.Size = new System.Drawing.Size(81, 22);
+            this.Gacha0.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 15);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "[0]";
+            // 
+            // Gacha1
+            // 
+            this.Gacha1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Gacha1.Location = new System.Drawing.Point(33, 50);
+            this.Gacha1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Gacha1.Name = "Gacha1";
+            this.Gacha1.ReadOnly = true;
+            this.Gacha1.Size = new System.Drawing.Size(81, 22);
+            this.Gacha1.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 15);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "[1]";
+            // 
+            // Gacha2
+            // 
+            this.Gacha2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Gacha2.Location = new System.Drawing.Point(33, 78);
+            this.Gacha2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Gacha2.Name = "Gacha2";
+            this.Gacha2.ReadOnly = true;
+            this.Gacha2.Size = new System.Drawing.Size(81, 22);
+            this.Gacha2.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 15);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "[2]";
+            // 
+            // Gacha3
+            // 
+            this.Gacha3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Gacha3.Location = new System.Drawing.Point(33, 106);
+            this.Gacha3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Gacha3.Name = "Gacha3";
+            this.Gacha3.ReadOnly = true;
+            this.Gacha3.Size = new System.Drawing.Size(81, 22);
+            this.Gacha3.TabIndex = 41;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 15);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "[3]";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Gacha0);
+            this.groupBox1.Controls.Add(this.Gacha1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.Gacha3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.Gacha2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 339);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(121, 132);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gacha Seeds ($)";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Fest0);
+            this.groupBox2.Controls.Add(this.Fest1);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.Fest3);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.Fest2);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(169, 339);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(121, 132);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fest Seeds (Shells)";
+            // 
+            // Fest0
+            // 
+            this.Fest0.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Fest0.Location = new System.Drawing.Point(33, 22);
+            this.Fest0.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Fest0.Name = "Fest0";
+            this.Fest0.ReadOnly = true;
+            this.Fest0.Size = new System.Drawing.Size(81, 22);
+            this.Fest0.TabIndex = 35;
+            // 
+            // Fest1
+            // 
+            this.Fest1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Fest1.Location = new System.Drawing.Point(33, 50);
+            this.Fest1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Fest1.Name = "Fest1";
+            this.Fest1.ReadOnly = true;
+            this.Fest1.Size = new System.Drawing.Size(81, 22);
+            this.Fest1.TabIndex = 37;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 15);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "[3]";
+            // 
+            // Fest3
+            // 
+            this.Fest3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Fest3.Location = new System.Drawing.Point(33, 106);
+            this.Fest3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Fest3.Name = "Fest3";
+            this.Fest3.ReadOnly = true;
+            this.Fest3.Size = new System.Drawing.Size(81, 22);
+            this.Fest3.TabIndex = 41;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 15);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "[2]";
+            // 
+            // Fest2
+            // 
+            this.Fest2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Fest2.Location = new System.Drawing.Point(33, 78);
+            this.Fest2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Fest2.Name = "Fest2";
+            this.Fest2.ReadOnly = true;
+            this.Fest2.Size = new System.Drawing.Size(81, 22);
+            this.Fest2.TabIndex = 39;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 15);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "[1]";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 15);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "[0]";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Murch0);
+            this.groupBox3.Controls.Add(this.Murch1);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.Murch3);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.Murch2);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Location = new System.Drawing.Point(325, 339);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(121, 132);
+            this.groupBox3.TabIndex = 43;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Murch Seeds";
+            // 
+            // Murch0
+            // 
+            this.Murch0.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Murch0.Location = new System.Drawing.Point(33, 22);
+            this.Murch0.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Murch0.Name = "Murch0";
+            this.Murch0.ReadOnly = true;
+            this.Murch0.Size = new System.Drawing.Size(81, 22);
+            this.Murch0.TabIndex = 35;
+            // 
+            // Murch1
+            // 
+            this.Murch1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Murch1.Location = new System.Drawing.Point(33, 50);
+            this.Murch1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Murch1.Name = "Murch1";
+            this.Murch1.ReadOnly = true;
+            this.Murch1.Size = new System.Drawing.Size(81, 22);
+            this.Murch1.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 108);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 15);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "[3]";
+            // 
+            // Murch3
+            // 
+            this.Murch3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Murch3.Location = new System.Drawing.Point(33, 106);
+            this.Murch3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Murch3.Name = "Murch3";
+            this.Murch3.ReadOnly = true;
+            this.Murch3.Size = new System.Drawing.Size(81, 22);
+            this.Murch3.TabIndex = 41;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 15);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "[2]";
+            // 
+            // Murch2
+            // 
+            this.Murch2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Murch2.Location = new System.Drawing.Point(33, 78);
+            this.Murch2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Murch2.Name = "Murch2";
+            this.Murch2.ReadOnly = true;
+            this.Murch2.Size = new System.Drawing.Size(81, 22);
+            this.Murch2.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 15);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "[1]";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(21, 15);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "[0]";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 329);
+            this.ClientSize = new System.Drawing.Size(458, 483);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GearIcon);
             this.Controls.Add(this.GearName);
             this.Controls.Add(this.LabelGearName);
@@ -443,6 +755,12 @@
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,6 +803,33 @@
         private TextBox GearName;
         private Label LabelGearName;
         private PictureBox GearIcon;
+        private TextBox Gacha0;
+        private Label label4;
+        private TextBox Gacha1;
+        private Label label1;
+        private TextBox Gacha2;
+        private Label label2;
+        private TextBox Gacha3;
+        private Label label3;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private TextBox Fest0;
+        private TextBox Fest1;
+        private Label label5;
+        private TextBox Fest3;
+        private Label label6;
+        private TextBox Fest2;
+        private Label label7;
+        private Label label8;
+        private GroupBox groupBox3;
+        private TextBox Murch0;
+        private TextBox Murch1;
+        private Label label9;
+        private TextBox Murch3;
+        private Label label10;
+        private TextBox Murch2;
+        private Label label11;
+        private Label label12;
     }
 }
 
