@@ -179,31 +179,35 @@ namespace Splat3GearView
         private static Dictionary<byte, GachaSeed> ReadGachaSeeds(byte[] data)
         {
             var ret = new Dictionary<byte, GachaSeed>();
-            const int s = (int)GachaSeed.SEED_OFFSET + GachaSeed.SEED_SIZE;
             for (uint i = 0; i < GachaSeed.SIZE; i += GachaSeed.STRUCT_SIZE)
             {
                 var chunk = data.AsSpan((int)i, (int)GachaSeed.STRUCT_SIZE);
                 var key = ReadUInt32LittleEndian(chunk[..8]);
+
+                // Init the seed here so it's easier to find the unknown keys
+                var rawseed = chunk[(byte)GachaSeed.SEED_OFFSET..((int)GachaSeed.SEED_OFFSET + GachaSeed.SEED_SIZE)];
+                var seed = new GachaSeed(rawseed.ToArray());
+
                 switch (key)
                 {
                     case GachaSeed.NORMAL_KEY:
-                        ret.Add(0, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        ret.Add(0, seed);
                         break;
 
                     case GachaSeed.FEST_KEY:
-                        ret.Add(1, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        ret.Add(1, seed);
                         break;
 
                     case GachaSeed.MURCH_KEY:
-                        ret.Add(2, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        ret.Add(2, seed);
                         break;
 
                     case GachaSeed.TITLE_KEY:
-                        ret.Add(3, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        ret.Add(3, seed);
                         break;
 
                     case GachaSeed.BANNER_KEY:
-                        ret.Add(4, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        ret.Add(4, seed);
                         break;
 
                     default:
