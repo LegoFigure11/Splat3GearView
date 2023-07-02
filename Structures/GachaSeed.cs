@@ -4,13 +4,16 @@ namespace Splat3GearView.Structures
 {
     public partial class GachaSeed
     {
-        public static uint NORMAL_KEY = 0x55663B19;
-        public static uint FEST_KEY = 0xA00259CF;
-        public static uint MURCH_KEY = 0xCCC5FFFB;
-        public static uint STRUCT_SIZE = 0x80;
-        public static uint SEED_OFFSET = 0x48;
-        public static byte SEED_SIZE = 0x10;
-        public static uint SIZE = 0x880;
+        public const uint STRUCT_SIZE = 0x80;
+        public const uint SEED_OFFSET = 0x48;
+        public const byte SEED_SIZE = 0x10;
+        public const ushort SIZE = 0x880;
+
+        public const uint NORMAL_KEY = 0x55663B19;
+        public const uint FEST_KEY = 0xA00259CF;
+        public const uint MURCH_KEY = 0xCCC5FFFB;
+        public const uint TITLE_KEY = 0xD7FD118D;
+        public const uint BANNER_KEY = 0xB4DF951B;
 
         public readonly byte[] Data; // Raw data
         public GachaSeed(byte[] data) => Data = data;

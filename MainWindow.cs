@@ -58,54 +58,36 @@ namespace Splat3GearView
 
                 ButtonConnect.Enabled = false;
                 ButtonDisconnect.Enabled = true;
-                ConnectionStatusText.Text = "Reading gacha seed...";
-                GachaSeed state;
+                ConnectionStatusText.Text = "Reading seed block...";
+
                 var offs = Offsets.GachaBlock;
-                var test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                while (test != GachaSeed.NORMAL_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
-                {
-                    offs += GachaSeed.STRUCT_SIZE;
-                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                }
-                var FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
-                state = new GachaSeed(FullSeed);
+                var block = await SwitchConnection.ReadBytesAsync(offs, GachaSeed.SIZE, CancellationToken.None);
+                var seeds = ReadGachaSeeds(block);
 
-                Gacha0.Text = $"{state.s0:X08}";
-                Gacha1.Text = $"{state.s1:X08}";
-                Gacha2.Text = $"{state.s2:X08}";
-                Gacha3.Text = $"{state.s3:X08}";
+                Gacha0.Text = $"{seeds[0].s0:X08}";
+                Gacha1.Text = $"{seeds[0].s1:X08}";
+                Gacha2.Text = $"{seeds[0].s2:X08}";
+                Gacha3.Text = $"{seeds[0].s3:X08}";
 
-                ConnectionStatusText.Text = "Reading fest seed...";
-                offs = Offsets.GachaBlock;
-                test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                while (test != GachaSeed.FEST_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
-                {
-                    offs += GachaSeed.STRUCT_SIZE;
-                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                }
-                FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
-                state = new GachaSeed(FullSeed);
+                Fest0.Text = $"{seeds[1].s0:X08}";
+                Fest1.Text = $"{seeds[1].s1:X08}";
+                Fest2.Text = $"{seeds[1].s2:X08}";
+                Fest3.Text = $"{seeds[1].s3:X08}";
 
-                Fest0.Text = $"{state.s0:X08}";
-                Fest1.Text = $"{state.s1:X08}";
-                Fest2.Text = $"{state.s2:X08}";
-                Fest3.Text = $"{state.s3:X08}";
+                Murch0.Text = $"{seeds[2].s0:X08}";
+                Murch1.Text = $"{seeds[2].s1:X08}";
+                Murch2.Text = $"{seeds[2].s2:X08}";
+                Murch3.Text = $"{seeds[2].s3:X08}";
 
-                ConnectionStatusText.Text = "Reading Murch seed...";
-                offs = Offsets.GachaBlock;
-                test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                while (test != GachaSeed.MURCH_KEY && offs <= Offsets.GachaBlock + GachaSeed.SIZE)
-                {
-                    offs += GachaSeed.STRUCT_SIZE;
-                    test = ReadUInt32LittleEndian(await SwitchConnection.ReadBytesAsync(offs, 0x8, CancellationToken.None));
-                }
-                FullSeed = await SwitchConnection.ReadBytesAsync(GachaSeed.SEED_OFFSET + offs, GachaSeed.SEED_SIZE, CancellationToken.None);
-                state = new GachaSeed(FullSeed);
+                Title0.Text = $"{seeds[3].s0:X08}";
+                Title1.Text = $"{seeds[3].s1:X08}";
+                Title2.Text = $"{seeds[3].s2:X08}";
+                Title3.Text = $"{seeds[3].s3:X08}";
 
-                Murch0.Text = $"{state.s0:X08}";
-                Murch1.Text = $"{state.s1:X08}";
-                Murch2.Text = $"{state.s2:X08}";
-                Murch3.Text = $"{state.s3:X08}";
+                Banner0.Text = $"{seeds[4].s0:X08}";
+                Banner1.Text = $"{seeds[4].s1:X08}";
+                Banner2.Text = $"{seeds[4].s2:X08}";
+                Banner3.Text = $"{seeds[4].s3:X08}";
 
                 ConnectionStatusText.Text = "Reading gear...";
                 GearList.Clear();
@@ -192,6 +174,43 @@ namespace Splat3GearView
                 ButtonConnect.Enabled = true;
                 ButtonDisconnect.Enabled = false;
             }
+        }
+
+        private static Dictionary<byte, GachaSeed> ReadGachaSeeds(byte[] data)
+        {
+            var ret = new Dictionary<byte, GachaSeed>();
+            const int s = (int)GachaSeed.SEED_OFFSET + GachaSeed.SEED_SIZE;
+            for (uint i = 0; i < GachaSeed.SIZE; i += GachaSeed.STRUCT_SIZE)
+            {
+                var chunk = data.AsSpan((int)i, (int)GachaSeed.STRUCT_SIZE);
+                var key = ReadUInt32LittleEndian(chunk[..8]);
+                switch (key)
+                {
+                    case GachaSeed.NORMAL_KEY:
+                        ret.Add(0, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        break;
+
+                    case GachaSeed.FEST_KEY:
+                        ret.Add(1, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        break;
+
+                    case GachaSeed.MURCH_KEY:
+                        ret.Add(2, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        break;
+
+                    case GachaSeed.TITLE_KEY:
+                        ret.Add(3, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        break;
+
+                    case GachaSeed.BANNER_KEY:
+                        ret.Add(4, new GachaSeed(chunk[(byte)GachaSeed.SEED_OFFSET..s].ToArray()));
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            return ret;
         }
 
         private void Disconnect_Click(object sender, EventArgs e)

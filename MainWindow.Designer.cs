@@ -91,10 +91,30 @@
             this.Murch2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Title0 = new System.Windows.Forms.TextBox();
+            this.Title1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Title3 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Title2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Banner0 = new System.Windows.Forms.TextBox();
+            this.Banner1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Banner3 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Banner2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelSwitchIP
@@ -707,11 +727,199 @@
             this.label12.TabIndex = 34;
             this.label12.Text = "[0]";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Title0);
+            this.groupBox4.Controls.Add(this.Title1);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.Title3);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.Title2);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Location = new System.Drawing.Point(91, 477);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(121, 132);
+            this.groupBox4.TabIndex = 44;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Title Seeds";
+            // 
+            // Title0
+            // 
+            this.Title0.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title0.Location = new System.Drawing.Point(33, 22);
+            this.Title0.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Title0.Name = "Title0";
+            this.Title0.ReadOnly = true;
+            this.Title0.Size = new System.Drawing.Size(81, 22);
+            this.Title0.TabIndex = 35;
+            // 
+            // Title1
+            // 
+            this.Title1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title1.Location = new System.Drawing.Point(33, 50);
+            this.Title1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Title1.Name = "Title1";
+            this.Title1.ReadOnly = true;
+            this.Title1.Size = new System.Drawing.Size(81, 22);
+            this.Title1.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(21, 15);
+            this.label13.TabIndex = 40;
+            this.label13.Text = "[3]";
+            // 
+            // Title3
+            // 
+            this.Title3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title3.Location = new System.Drawing.Point(33, 106);
+            this.Title3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Title3.Name = "Title3";
+            this.Title3.ReadOnly = true;
+            this.Title3.Size = new System.Drawing.Size(81, 22);
+            this.Title3.TabIndex = 41;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 80);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 15);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "[2]";
+            // 
+            // Title2
+            // 
+            this.Title2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title2.Location = new System.Drawing.Point(33, 78);
+            this.Title2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Title2.Name = "Title2";
+            this.Title2.ReadOnly = true;
+            this.Title2.Size = new System.Drawing.Size(81, 22);
+            this.Title2.TabIndex = 39;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 52);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 15);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "[1]";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(21, 15);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "[0]";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.Banner0);
+            this.groupBox5.Controls.Add(this.Banner1);
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.Banner3);
+            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.Banner2);
+            this.groupBox5.Controls.Add(this.label19);
+            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Location = new System.Drawing.Point(246, 477);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(121, 132);
+            this.groupBox5.TabIndex = 45;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Banner Seeds";
+            // 
+            // Banner0
+            // 
+            this.Banner0.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Banner0.Location = new System.Drawing.Point(33, 22);
+            this.Banner0.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Banner0.Name = "Banner0";
+            this.Banner0.ReadOnly = true;
+            this.Banner0.Size = new System.Drawing.Size(81, 22);
+            this.Banner0.TabIndex = 35;
+            // 
+            // Banner1
+            // 
+            this.Banner1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Banner1.Location = new System.Drawing.Point(33, 50);
+            this.Banner1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Banner1.Name = "Banner1";
+            this.Banner1.ReadOnly = true;
+            this.Banner1.Size = new System.Drawing.Size(81, 22);
+            this.Banner1.TabIndex = 37;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 108);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(21, 15);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "[3]";
+            // 
+            // Banner3
+            // 
+            this.Banner3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Banner3.Location = new System.Drawing.Point(33, 106);
+            this.Banner3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Banner3.Name = "Banner3";
+            this.Banner3.ReadOnly = true;
+            this.Banner3.Size = new System.Drawing.Size(81, 22);
+            this.Banner3.TabIndex = 41;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(21, 15);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "[2]";
+            // 
+            // Banner2
+            // 
+            this.Banner2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Banner2.Location = new System.Drawing.Point(33, 78);
+            this.Banner2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Banner2.Name = "Banner2";
+            this.Banner2.ReadOnly = true;
+            this.Banner2.Size = new System.Drawing.Size(81, 22);
+            this.Banner2.TabIndex = 39;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 52);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(21, 15);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "[1]";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(9, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(21, 15);
+            this.label20.TabIndex = 34;
+            this.label20.Text = "[0]";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 483);
+            this.ClientSize = new System.Drawing.Size(458, 617);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -761,6 +969,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,6 +1042,24 @@
         private TextBox Murch2;
         private Label label11;
         private Label label12;
+        private GroupBox groupBox4;
+        private TextBox Title0;
+        private TextBox Title1;
+        private Label label13;
+        private TextBox Title3;
+        private Label label14;
+        private TextBox Title2;
+        private Label label15;
+        private Label label16;
+        private GroupBox groupBox5;
+        private TextBox Banner0;
+        private TextBox Banner1;
+        private Label label17;
+        private TextBox Banner3;
+        private Label label18;
+        private TextBox Banner2;
+        private Label label19;
+        private Label label20;
     }
 }
 
