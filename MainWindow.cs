@@ -4,6 +4,10 @@ using Splat3GearView.Structures;
 using SysBot.Base;
 using System.Net.Sockets;
 using System.Text.Json;
+using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace Splat3GearView
@@ -243,12 +247,32 @@ namespace Splat3GearView
             GearSeed.Text = $"{gear.Seed:X8}";
             GearRarity.Text = $"{gear.Rarity}";
             GearSlots.Text = $"{gear.Ability_SubCount}";
+
             string fp = $".\\Resources\\Images\\Gear\\{gear.__RowID}.png";
             GearIcon.Image = File.Exists(fp) ? Image.FromFile(fp) : null;
+
+            string BasePath = $".\\Resources\\Images\\Skill\\Base.png";
+            var Base = File.Exists(BasePath) ? Image.FromFile(BasePath) : null;
+
+            string Primary = $".\\Resources\\Images\\Skill\\{gear.Ability_Primary}.png";
             GearPrimaryAbility.Text = Strings.Abilities[gear.Ability_Primary];
+            var p = File.Exists(Primary) ? Image.FromFile(Primary) : null;
+            PrimaryIcon.Image = (Base is not null && p is not null) ? LayerImage(Base, p, 0, 0) : null;
+
+            string Sub1 = $".\\Resources\\Images\\Skill\\{gear.Ability_Sub1}.png";
             GearSubAbility1.Text = Strings.Abilities[gear.Ability_Sub1];
+            var s1 = File.Exists(Sub1) ? Image.FromFile(Sub1) : null;
+            Sub1Icon.Image = (Base is not null && s1 is not null) ? LayerImage(Base, s1, 0, 0) : null;
+
+            string Sub2 = $".\\Resources\\Images\\Skill\\{(gear.Rarity >= 1 ? gear.Ability_Sub2 : -1)}.png";
             GearSubAbility2.Text = gear.Rarity >= 1 ? Strings.Abilities[gear.Ability_Sub2] : "(None)";
+            var s2 = File.Exists(Sub2) ? Image.FromFile(Sub2) : null;
+            Sub2Icon.Image = (Base is not null && s2 is not null) ? LayerImage(Base, s2, 0, 0) : null;
+
+            string Sub3 = $".\\Resources\\Images\\Skill\\{(gear.Rarity >= 2 ? gear.Ability_Sub3 : -1)}.png";
             GearSubAbility3.Text = gear.Rarity >= 2 ? Strings.Abilities[gear.Ability_Sub3] : "(None)";
+            var s3 = File.Exists(Sub3) ? Image.FromFile(Sub3) : null;
+            Sub3Icon.Image = (Base is not null && s3 is not null) ? LayerImage(Base, s3, 0, 0) : null;
         }
 
         private void ButtonPrevious_Click(object sender, EventArgs e)
@@ -267,6 +291,14 @@ namespace Splat3GearView
                 index = (index + GearList.Count + 1) % GearList.Count; // Wrap around
                 DisplayGear(index);
             }
+        }
+
+        public static Bitmap LayerImage(Image baseLayer, Image overLayer, int x, int y)
+        {
+            Bitmap img = new(baseLayer);
+            using Graphics gr = Graphics.FromImage(img);
+            gr.DrawImage(overLayer, x, y, overLayer.Width, overLayer.Height);
+            return img;
         }
 
         private readonly static Dictionary<string, Dictionary<string, WebsiteFormat>> WebsiteJSON = new();

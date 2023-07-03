@@ -109,12 +109,20 @@
             this.Banner2 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.PrimaryIcon = new System.Windows.Forms.PictureBox();
+            this.Sub1Icon = new System.Windows.Forms.PictureBox();
+            this.Sub2Icon = new System.Windows.Forms.PictureBox();
+            this.Sub3Icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PrimaryIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub1Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub2Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub3Icon)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelSwitchIP
@@ -913,11 +921,51 @@
             this.label20.TabIndex = 34;
             this.label20.Text = "[0]";
             // 
+            // PrimaryIcon
+            // 
+            this.PrimaryIcon.Location = new System.Drawing.Point(15, 246);
+            this.PrimaryIcon.Name = "PrimaryIcon";
+            this.PrimaryIcon.Size = new System.Drawing.Size(48, 48);
+            this.PrimaryIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PrimaryIcon.TabIndex = 46;
+            this.PrimaryIcon.TabStop = false;
+            // 
+            // Sub1Icon
+            // 
+            this.Sub1Icon.Location = new System.Drawing.Point(69, 250);
+            this.Sub1Icon.Name = "Sub1Icon";
+            this.Sub1Icon.Size = new System.Drawing.Size(40, 40);
+            this.Sub1Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sub1Icon.TabIndex = 47;
+            this.Sub1Icon.TabStop = false;
+            // 
+            // Sub2Icon
+            // 
+            this.Sub2Icon.Location = new System.Drawing.Point(115, 250);
+            this.Sub2Icon.Name = "Sub2Icon";
+            this.Sub2Icon.Size = new System.Drawing.Size(40, 40);
+            this.Sub2Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sub2Icon.TabIndex = 48;
+            this.Sub2Icon.TabStop = false;
+            // 
+            // Sub3Icon
+            // 
+            this.Sub3Icon.Location = new System.Drawing.Point(161, 250);
+            this.Sub3Icon.Name = "Sub3Icon";
+            this.Sub3Icon.Size = new System.Drawing.Size(40, 40);
+            this.Sub3Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sub3Icon.TabIndex = 49;
+            this.Sub3Icon.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 617);
+            this.Controls.Add(this.Sub3Icon);
+            this.Controls.Add(this.Sub2Icon);
+            this.Controls.Add(this.Sub1Icon);
+            this.Controls.Add(this.PrimaryIcon);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -973,6 +1021,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PrimaryIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub1Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub2Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub3Icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1060,6 +1112,10 @@
         private TextBox Banner2;
         private Label label19;
         private Label label20;
+        private PictureBox PrimaryIcon;
+        private PictureBox Sub1Icon;
+        private PictureBox Sub2Icon;
+        private PictureBox Sub3Icon;
     }
 }
 

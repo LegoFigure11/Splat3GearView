@@ -28,7 +28,9 @@ namespace Splat3GearView.Structures
         // Derived Values
         public virtual string? Name { get; set; }
         public virtual string? Brand { get; set; }
+#pragma warning disable IDE1006 // Naming Styles
         public virtual string? __RowID { get; set; }
+#pragma warning restore IDE1006 // Naming Styles
 
         // Methods
         private bool Validate()
