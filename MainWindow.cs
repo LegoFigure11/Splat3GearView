@@ -22,6 +22,8 @@ namespace Splat3GearView
         private readonly static List<Gear> GearList = new();
         private int index;
 
+        string CachedText = string.Empty;
+
         public MainWindow()
         {
             string build = string.Empty;
@@ -39,6 +41,7 @@ namespace Splat3GearView
         {
             InputSwitchIP.Text = Settings.Default.SwitchIP;
             LabelIndex.Text = string.Empty;
+            CachedText = Text;
         }
 
         private void InputSwitchIP_Changed(object sender, EventArgs e)
@@ -58,6 +61,14 @@ namespace Splat3GearView
             {
                 ConnectionStatusText.Text = "Connecting...";
                 SwitchConnection.Connect();
+
+                //var game = SwitchConnection.GetGameInfo("name", CancellationToken.None).Result;
+                var vers = SwitchConnection.GetGameInfo("version", CancellationToken.None).Result.Trim();
+                //var id = SwitchConnection.GetTitleID(CancellationToken.None).Result;
+
+                var versionstring = $" - S3 ver {vers}";
+                Text = CachedText += versionstring;
+
                 index = 0;
 
                 ButtonConnect.Enabled = false;
