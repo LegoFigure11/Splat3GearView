@@ -113,6 +113,11 @@
             this.Sub1Icon = new System.Windows.Forms.PictureBox();
             this.Sub2Icon = new System.Windows.Forms.PictureBox();
             this.Sub3Icon = new System.Windows.Forms.PictureBox();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.ButtonGrindTableturf = new System.Windows.Forms.Button();
+            this.ButtonStopGrind = new System.Windows.Forms.Button();
+            this.GrindMode = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GearIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -265,11 +270,12 @@
             // 
             // GearSeed
             // 
+            this.GearSeed.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GearSeed.Location = new System.Drawing.Point(313, 125);
             this.GearSeed.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GearSeed.Name = "GearSeed";
             this.GearSeed.ReadOnly = true;
-            this.GearSeed.Size = new System.Drawing.Size(132, 23);
+            this.GearSeed.Size = new System.Drawing.Size(132, 22);
             this.GearSeed.TabIndex = 13;
             // 
             // LabelGearSeed
@@ -957,11 +963,65 @@
             this.Sub3Icon.TabIndex = 49;
             this.Sub3Icon.TabStop = false;
             // 
+            // splitter1
+            // 
+            this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter1.Location = new System.Drawing.Point(0, 611);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(458, 28);
+            this.splitter1.TabIndex = 50;
+            this.splitter1.TabStop = false;
+            // 
+            // ButtonGrindTableturf
+            // 
+            this.ButtonGrindTableturf.Location = new System.Drawing.Point(12, 613);
+            this.ButtonGrindTableturf.Name = "ButtonGrindTableturf";
+            this.ButtonGrindTableturf.Size = new System.Drawing.Size(99, 23);
+            this.ButtonGrindTableturf.TabIndex = 51;
+            this.ButtonGrindTableturf.Text = "Grind Tableturf";
+            this.ButtonGrindTableturf.UseVisualStyleBackColor = true;
+            this.ButtonGrindTableturf.Click += new System.EventHandler(this.ButtonGrindTableturf_Click);
+            // 
+            // ButtonStopGrind
+            // 
+            this.ButtonStopGrind.Location = new System.Drawing.Point(118, 613);
+            this.ButtonStopGrind.Name = "ButtonStopGrind";
+            this.ButtonStopGrind.Size = new System.Drawing.Size(96, 23);
+            this.ButtonStopGrind.TabIndex = 52;
+            this.ButtonStopGrind.Text = "Stop";
+            this.ButtonStopGrind.UseVisualStyleBackColor = true;
+            this.ButtonStopGrind.Click += new System.EventHandler(this.ButtonStopGrind_Click);
+            // 
+            // GrindMode
+            // 
+            this.GrindMode.FormattingEnabled = true;
+            this.GrindMode.Items.AddRange(new object[] {
+            "Always Skip"});
+            this.GrindMode.Location = new System.Drawing.Point(325, 614);
+            this.GrindMode.Name = "GrindMode";
+            this.GrindMode.Size = new System.Drawing.Size(121, 23);
+            this.GrindMode.TabIndex = 53;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(278, 617);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 15);
+            this.label21.TabIndex = 54;
+            this.label21.Text = "Mode:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 617);
+            this.ClientSize = new System.Drawing.Size(458, 639);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.GrindMode);
+            this.Controls.Add(this.ButtonStopGrind);
+            this.Controls.Add(this.ButtonGrindTableturf);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.Sub3Icon);
             this.Controls.Add(this.Sub2Icon);
             this.Controls.Add(this.Sub1Icon);
@@ -1116,6 +1176,11 @@
         private PictureBox Sub1Icon;
         private PictureBox Sub2Icon;
         private PictureBox Sub3Icon;
+        private Splitter splitter1;
+        private Button ButtonGrindTableturf;
+        private Button ButtonStopGrind;
+        private ComboBox GrindMode;
+        private Label label21;
     }
 }
 

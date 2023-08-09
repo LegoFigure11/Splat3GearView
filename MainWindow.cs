@@ -4,10 +4,6 @@ using Splat3GearView.Structures;
 using SysBot.Base;
 using System.Net.Sockets;
 using System.Text.Json;
-using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace Splat3GearView
@@ -15,7 +11,7 @@ namespace Splat3GearView
     public partial class MainWindow : Form
     {
         private readonly static SwitchConnectionConfig Config = new() { Protocol = SwitchProtocol.WiFi, IP = Settings.Default.SwitchIP, Port = 6000 };
-        public SwitchSocketAsync SwitchConnection = new(Config);
+        private readonly static SwitchSocketAsync SwitchConnection = new(Config);
 
         public readonly GearData GearData = new();
 
@@ -23,6 +19,8 @@ namespace Splat3GearView
         private int index;
 
         string CachedText = string.Empty;
+
+        bool GrindTT;
 
         public MainWindow()
         {
@@ -42,6 +40,7 @@ namespace Splat3GearView
             InputSwitchIP.Text = Settings.Default.SwitchIP;
             LabelIndex.Text = string.Empty;
             CachedText = Text;
+            GrindMode.SelectedIndex = 0;
         }
 
         private void InputSwitchIP_Changed(object sender, EventArgs e)
@@ -172,7 +171,8 @@ namespace Splat3GearView
                     ButtonDumpGear.Enabled = true;
                 }
                 else ButtonDumpGear.Enabled = false;
-                Disconnect();
+                ConnectionStatusText.Text = "Done.";
+                //Disconnect();
             }
             catch (SocketException err)
             {
@@ -237,10 +237,11 @@ namespace Splat3GearView
             Disconnect();
         }
 
-        private void Disconnect()
+        private async void Disconnect()
         {
             if (SwitchConnection.Connected)
             {
+                await SwitchConnection.SendAsync(SwitchCommand.DetachController(true), CancellationToken.None).ConfigureAwait(false);
                 SwitchConnection.Disconnect();
                 ConnectionStatusText.Text = "Disconnected.";
                 ButtonConnect.Enabled = true;
@@ -342,6 +343,39 @@ namespace Splat3GearView
             string JSONString = JsonSerializer.Serialize(WebsiteJSON);
             Clipboard.SetText(JSONString);
             MessageBox.Show("Copied JSON to clipboard!\nUpload it at https://leanny.github.io/splat3seedchecker/#/settings");
+        }
+
+        private async void ButtonGrindTableturf_Click(object sender, EventArgs e)
+        {
+            GrindTT = true;
+            if (SwitchConnection.Connected)
+            {
+                while (GrindTT)
+                {
+                    switch (GrindMode.SelectedIndex)
+                    {
+                        case 0:
+                            if (SwitchConnection.Connected) await Click(SwitchButton.DUP, 20, CancellationToken.None);
+                            if (SwitchConnection.Connected) await Click(SwitchButton.A, 20, CancellationToken.None);
+                            if (SwitchConnection.Connected) await Click(SwitchButton.A, 20, CancellationToken.None);
+                            if (SwitchConnection.Connected) await Click(SwitchButton.B, 20, CancellationToken.None);
+                            await Task.Delay(1_000, CancellationToken.None);
+                            break;
+                    }
+                }
+                await SwitchConnection.SendAsync(SwitchCommand.DetachController(true), CancellationToken.None).ConfigureAwait(false);
+            }
+        }
+
+        private static new async Task Click(SwitchButton button, int delay, CancellationToken token)
+        {
+            await SwitchConnection.SendAsync(SwitchCommand.Click(button, true), token).ConfigureAwait(false);
+            await Task.Delay(delay, token).ConfigureAwait(false);
+        }
+
+        private void ButtonStopGrind_Click(object sender, EventArgs e)
+        {
+            GrindTT = false;
         }
     }
 }
