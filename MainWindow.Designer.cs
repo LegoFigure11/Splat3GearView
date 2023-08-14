@@ -113,7 +113,6 @@
             this.Sub1Icon = new System.Windows.Forms.PictureBox();
             this.Sub2Icon = new System.Windows.Forms.PictureBox();
             this.Sub3Icon = new System.Windows.Forms.PictureBox();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.ButtonGrindTableturf = new System.Windows.Forms.Button();
             this.ButtonStopGrind = new System.Windows.Forms.Button();
             this.GrindMode = new System.Windows.Forms.ComboBox();
@@ -963,16 +962,6 @@
             this.Sub3Icon.TabIndex = 49;
             this.Sub3Icon.TabStop = false;
             // 
-            // splitter1
-            // 
-            this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 611);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(458, 28);
-            this.splitter1.TabIndex = 50;
-            this.splitter1.TabStop = false;
-            // 
             // ButtonGrindTableturf
             // 
             this.ButtonGrindTableturf.Location = new System.Drawing.Point(12, 613);
@@ -1021,7 +1010,6 @@
             this.Controls.Add(this.GrindMode);
             this.Controls.Add(this.ButtonStopGrind);
             this.Controls.Add(this.ButtonGrindTableturf);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.Sub3Icon);
             this.Controls.Add(this.Sub2Icon);
             this.Controls.Add(this.Sub1Icon);

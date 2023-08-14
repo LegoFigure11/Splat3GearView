@@ -108,58 +108,88 @@ namespace Splat3GearView
                 uint pos = 0x40; // First gear is located at offset + 0x40
                 Gear gear;
 
+                int CHUNK_SIZE = 10;
+
+                bool IsValid = true;
+
                 // Load Headgear
                 ConnectionStatusText.Text = "Reading headgear...";
                 do
                 {
-                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Head + pos, Gear.SIZE, CancellationToken.None); // Read gear
-                    gear = new Gear(Data)
+                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Head + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None); // Read gear in chunks
+                    for (int i = 0; i < CHUNK_SIZE; i++)
                     {
-                        GearType = (byte)GearTypes.Headgear
-                    };
-                    if (gear.IsValid)
-                    {
-                        gear.SetInfoFromJSON();
-                        GearList.Add(gear);
+                        gear = new Gear(Data.AsSpan(i * Gear.SIZE, Gear.SIZE).ToArray())
+                        {
+                            GearType = (byte)GearTypes.Headgear
+                        };
+                        if (gear.IsValid)
+                        {
+                            gear.SetInfoFromJSON();
+                            GearList.Add(gear);
+                        }
+                        else
+                        {
+                            IsValid = false;
+                            break;
+                        }
                     }
-                    pos += Gear.SIZE; // Iterate through list
-                } while (gear.IsValid); // Reached junk data/end of list
+                    pos += (uint)(Gear.SIZE * CHUNK_SIZE);
+                } while (IsValid); // Reached junk data/end of list
 
                 // Load Clothes
                 pos = 0x40;
+                IsValid = true;
                 ConnectionStatusText.Text = "Reading clothes...";
                 do
                 {
-                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Clothes + pos, Gear.SIZE, CancellationToken.None);
-                    gear = new Gear(Data)
+                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Clothes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None); // Read gear in chunks
+                    for (int i = 0; i < CHUNK_SIZE; i++)
                     {
-                        GearType = (byte)GearTypes.Clothes
-                    };
-                    if (gear.IsValid)
-                    {
-                        gear.SetInfoFromJSON();
-                        GearList.Add(gear);
+                        gear = new Gear(Data.AsSpan(i * Gear.SIZE, Gear.SIZE).ToArray())
+                        {
+                            GearType = (byte)GearTypes.Clothes
+                        };
+                        if (gear.IsValid)
+                        {
+                            gear.SetInfoFromJSON();
+                            GearList.Add(gear);
+                        }
+                        else
+                        {
+                            IsValid = false;
+                            break;
+                        }
                     }
-                    pos += Gear.SIZE;
-                } while (gear.IsValid);
+                    pos += (uint)(Gear.SIZE * CHUNK_SIZE);
+                } while (IsValid); // Reached junk data/end of list
 
                 // Load Shoes
                 pos = 0x40;
+                IsValid = true;
                 ConnectionStatusText.Text = "Reading shoes...";
                 do
                 {
-                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Shoes + pos, Gear.SIZE, CancellationToken.None);
-                    gear = new Gear(Data)
+                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Shoes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None); // Read gear in chunks
+                    for (int i = 0; i < CHUNK_SIZE; i++)
                     {
-                        GearType = (byte)GearTypes.Shoes
-                    };
-                    if (gear.IsValid)
-                    {
-                        gear.SetInfoFromJSON();
-                        GearList.Add(gear);
+                        gear = new Gear(Data.AsSpan(i * Gear.SIZE, Gear.SIZE).ToArray())
+                        {
+                            GearType = (byte)GearTypes.Shoes
+                        };
+                        if (gear.IsValid)
+                        {
+                            gear.SetInfoFromJSON();
+                            GearList.Add(gear);
+                        }
+                        else
+                        {
+                            IsValid = false;
+                            break;
+                        }
                     }
-                    pos += Gear.SIZE;
-                } while (gear.IsValid);
+                    pos += (uint)(Gear.SIZE * CHUNK_SIZE);
+                } while (IsValid); // Reached junk data/end of list
 
                 LabelLoadedGear.Text = $"Loaded Gear: {GearList.Count}";
                 LabelLoadedHeadgear.Text = $"Headgear: {GearList.Where(g => g.GearType == (byte)GearTypes.Headgear).Count()}";
@@ -235,6 +265,10 @@ namespace Splat3GearView
         private void Disconnect_Click(object sender, EventArgs e)
         {
             Disconnect();
+            ConnectionStatusText.Text = "Disconnected.";
+
+            ButtonConnect.Enabled = true;
+            ButtonDisconnect.Enabled = false;
         }
 
         private async void Disconnect()
@@ -243,9 +277,6 @@ namespace Splat3GearView
             {
                 await SwitchConnection.SendAsync(SwitchCommand.DetachController(true), CancellationToken.None).ConfigureAwait(false);
                 SwitchConnection.Disconnect();
-                ConnectionStatusText.Text = "Disconnected.";
-                ButtonConnect.Enabled = true;
-                ButtonDisconnect.Enabled = false;
             }
         }
 
