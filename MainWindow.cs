@@ -15,7 +15,7 @@ namespace Splat3GearView
 
         public readonly GearData GearData = new();
 
-        private readonly static List<Gear> GearList = new();
+        private List<Gear> GearList = new();
         private int index;
 
         string CachedText = string.Empty;
@@ -65,8 +65,8 @@ namespace Splat3GearView
                 var vers = SwitchConnection.GetGameInfo("version", CancellationToken.None).Result.Trim();
                 //var id = SwitchConnection.GetTitleID(CancellationToken.None).Result;
 
-                var versionstring = $" - S3 ver {vers}";
-                Text = CachedText += versionstring;
+                var vs = $" - S3 ver {vers}";
+                Text = CachedText + vs;
 
                 index = 0;
 
@@ -130,12 +130,14 @@ namespace Splat3GearView
                         }
                         else
                         {
+                            // Reached junk data/end of list, break out of both loops
                             IsValid = false;
                             break;
                         }
                     }
                     pos += (uint)(Gear.SIZE * CHUNK_SIZE);
-                } while (IsValid); // Reached junk data/end of list
+                } while (IsValid);
+
 
                 // Load Clothes
                 pos = 0x40;
@@ -143,7 +145,7 @@ namespace Splat3GearView
                 ConnectionStatusText.Text = "Reading clothes...";
                 do
                 {
-                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Clothes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None); // Read gear in chunks
+                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Clothes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None);
                     for (int i = 0; i < CHUNK_SIZE; i++)
                     {
                         gear = new Gear(Data.AsSpan(i * Gear.SIZE, Gear.SIZE).ToArray())
@@ -162,7 +164,7 @@ namespace Splat3GearView
                         }
                     }
                     pos += (uint)(Gear.SIZE * CHUNK_SIZE);
-                } while (IsValid); // Reached junk data/end of list
+                } while (IsValid);
 
                 // Load Shoes
                 pos = 0x40;
@@ -170,7 +172,7 @@ namespace Splat3GearView
                 ConnectionStatusText.Text = "Reading shoes...";
                 do
                 {
-                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Shoes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None); // Read gear in chunks
+                    var Data = await SwitchConnection.ReadBytesAsync(Offsets.GearList_Shoes + pos, Gear.SIZE * CHUNK_SIZE, CancellationToken.None);
                     for (int i = 0; i < CHUNK_SIZE; i++)
                     {
                         gear = new Gear(Data.AsSpan(i * Gear.SIZE, Gear.SIZE).ToArray())
@@ -189,12 +191,13 @@ namespace Splat3GearView
                         }
                     }
                     pos += (uint)(Gear.SIZE * CHUNK_SIZE);
-                } while (IsValid); // Reached junk data/end of list
+                } while (IsValid);
 
                 LabelLoadedGear.Text = $"Loaded Gear: {GearList.Count}";
                 LabelLoadedHeadgear.Text = $"Headgear: {GearList.Where(g => g.GearType == (byte)GearTypes.Headgear).Count()}";
                 LabelLoadedClothes.Text = $"Clothes: {GearList.Where(g => g.GearType == (byte)GearTypes.Clothes).Count()}";
                 LabelLoadedShoes.Text = $"Shoes: {GearList.Where(g => g.GearType == (byte)GearTypes.Shoes).Count()}";
+                GearList = GearList.OrderBy(g => g.GearType).ThenBy(g => g.ID).ToList();
                 if (GearList.Count > 0)
                 {
                     DisplayGear(index);
