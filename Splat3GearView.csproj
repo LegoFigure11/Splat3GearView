@@ -125,6 +125,15 @@
     <None Update="Resources\Images\Gear\Clt_COP011.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Clt_COP012.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_COP013.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_COP014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Clt_COP100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -134,6 +143,12 @@
     <None Update="Resources\Images\Gear\Clt_COP102.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Clt_COP103.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_COP104.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Clt_COP111.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -141,6 +156,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Clt_COP113.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_COP114.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Clt_FST001.png">
@@ -488,6 +506,9 @@
     <None Update="Resources\Images\Gear\Clt_SWT022.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Clt_SWT023.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Clt_TEL000.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -677,6 +698,12 @@
     <None Update="Resources\Images\Gear\Clt_TES077.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Clt_TES078.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_TES079.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Clt_TES081.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -708,6 +735,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Clt_TES093.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_TES094.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_TES095.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Clt_TLY000.png">
@@ -789,6 +822,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Clt_VST014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Clt_VST015.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Dummy.png">
@@ -917,6 +953,12 @@
     <None Update="Resources\Images\Gear\Hed_CAP036.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Hed_CAP038.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_CAP039.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Hed_COP001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -950,10 +992,25 @@
     <None Update="Resources\Images\Gear\Hed_COP011.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Hed_COP012.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_COP013.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_COP014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Hed_COP100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_COP101.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_COP102.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_COP105.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_COP110.png">
@@ -984,6 +1041,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_COP119.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_COP120.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_EYE000.png">
@@ -1115,6 +1175,9 @@
     <None Update="Resources\Images\Gear\Hed_HAT017.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Hed_HAT018.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Hed_HAT019.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1166,6 +1229,9 @@
     <None Update="Resources\Images\Gear\Hed_HDP009.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Hed_HDP010.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Hed_HDP011.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1203,6 +1269,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_MET014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_MET015.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Hed_MET016.png">
@@ -1436,6 +1505,9 @@
     <None Update="Resources\Images\Gear\Shs_BOT021.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Shs_BOT022.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Shs_BOT023.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1451,6 +1523,9 @@
     <None Update="Resources\Images\Gear\Shs_BOT027.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Shs_BOT028.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Shs_CFS000.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1458,6 +1533,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Shs_COP101.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Shs_COP102.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Shs_COP105.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Shs_COP108.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Shs_LTS000.png">
@@ -1565,6 +1649,9 @@
     <None Update="Resources\Images\Gear\Shs_SDL015.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Shs_SDL016.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Shs_SDL017.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1650,6 +1737,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Shs_SHI049.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Shs_SHI050.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Shs_SHI051.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Images\Gear\Shs_SHI052.png">
@@ -1889,10 +1982,6 @@
     <None Update="Resources\JSON\GearInfoShoes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Images\Gear\" />
   </ItemGroup>
 
 </Project>
