@@ -1133,6 +1133,18 @@
     <None Update="Resources\Images\Gear\Hed_FST000.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Images\Gear\Hed_HAP016.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_HAP017.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_HAP018.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Images\Gear\Hed_HAP019.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Images\Gear\Hed_HAT000.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
