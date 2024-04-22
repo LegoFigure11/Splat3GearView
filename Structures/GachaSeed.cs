@@ -7,7 +7,7 @@ namespace Splat3GearView.Structures
         public const uint STRUCT_SIZE = 0x80;
         public const uint SEED_OFFSET = 0x48;
         public const byte SEED_SIZE = 0x10;
-        public const ushort SIZE = 0x880;
+        public const ushort SIZE = 0x900;
 
         public const uint NORMAL_KEY = 0x55663B19;
         public const uint FEST_KEY = 0xA00259CF;

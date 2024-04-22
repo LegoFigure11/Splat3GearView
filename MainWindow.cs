@@ -2,6 +2,7 @@
 using Splat3GearView.Resources;
 using Splat3GearView.Structures;
 using SysBot.Base;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Text.Json;
 using static System.Buffers.Binary.BinaryPrimitives;
@@ -77,31 +78,50 @@ namespace Splat3GearView
                 var offs = Offsets.GachaBlock;
                 var block = await SwitchConnection.ReadBytesAsync(offs, GachaSeed.SIZE, CancellationToken.None);
                 var seeds = ReadGachaSeeds(block);
+                try
+                {
+                    Gacha0.Text = $"{seeds[0].s0:X08}";
+                    Gacha1.Text = $"{seeds[0].s1:X08}";
+                    Gacha2.Text = $"{seeds[0].s2:X08}";
+                    Gacha3.Text = $"{seeds[0].s3:X08}";
+                }
+                catch { };
 
-                Gacha0.Text = $"{seeds[0].s0:X08}";
-                Gacha1.Text = $"{seeds[0].s1:X08}";
-                Gacha2.Text = $"{seeds[0].s2:X08}";
-                Gacha3.Text = $"{seeds[0].s3:X08}";
+                try
+                {
+                    Fest0.Text = $"{seeds[1].s0:X08}";
+                    Fest1.Text = $"{seeds[1].s1:X08}";
+                    Fest2.Text = $"{seeds[1].s2:X08}";
+                    Fest3.Text = $"{seeds[1].s3:X08}";
+                }
+                catch { };
 
-                Fest0.Text = $"{seeds[1].s0:X08}";
-                Fest1.Text = $"{seeds[1].s1:X08}";
-                Fest2.Text = $"{seeds[1].s2:X08}";
-                Fest3.Text = $"{seeds[1].s3:X08}";
+                try
+                {
+                    Murch0.Text = $"{seeds[2].s0:X08}";
+                    Murch1.Text = $"{seeds[2].s1:X08}";
+                    Murch2.Text = $"{seeds[2].s2:X08}";
+                    Murch3.Text = $"{seeds[2].s3:X08}";
+                }
+                catch { };
 
-                Murch0.Text = $"{seeds[2].s0:X08}";
-                Murch1.Text = $"{seeds[2].s1:X08}";
-                Murch2.Text = $"{seeds[2].s2:X08}";
-                Murch3.Text = $"{seeds[2].s3:X08}";
+                try
+                {
+                    Title0.Text = $"{seeds[3].s0:X08}";
+                    Title1.Text = $"{seeds[3].s1:X08}";
+                    Title2.Text = $"{seeds[3].s2:X08}";
+                    Title3.Text = $"{seeds[3].s3:X08}";
+                }
+                catch { };
 
-                Title0.Text = $"{seeds[3].s0:X08}";
-                Title1.Text = $"{seeds[3].s1:X08}";
-                Title2.Text = $"{seeds[3].s2:X08}";
-                Title3.Text = $"{seeds[3].s3:X08}";
-
-                Banner0.Text = $"{seeds[4].s0:X08}";
-                Banner1.Text = $"{seeds[4].s1:X08}";
-                Banner2.Text = $"{seeds[4].s2:X08}";
-                Banner3.Text = $"{seeds[4].s3:X08}";
+                try
+                {
+                    Banner0.Text = $"{seeds[4].s0:X08}";
+                    Banner1.Text = $"{seeds[4].s1:X08}";
+                    Banner2.Text = $"{seeds[4].s2:X08}";
+                    Banner3.Text = $"{seeds[4].s3:X08}";
+                }
+                catch { };
 
                 ConnectionStatusText.Text = "Reading gear...";
                 GearList.Clear();
