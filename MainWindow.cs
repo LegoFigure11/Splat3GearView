@@ -71,6 +71,8 @@ namespace Splat3GearView
 
                 index = 0;
 
+                uint dlcOffs = 0;
+
                 ButtonConnect.Enabled = false;
                 ButtonDisconnect.Enabled = true;
                 ConnectionStatusText.Text = "Reading seed block...";
@@ -78,6 +80,12 @@ namespace Splat3GearView
                 var offs = Offsets.GachaBlock;
                 var block = await SwitchConnection.ReadBytesAsync(offs, GachaSeed.SIZE, CancellationToken.None);
                 var seeds = ReadGachaSeeds(block);
+                if (seeds.Count == 0)
+                {
+                    dlcOffs = Offsets.DLC_Offs;
+                    block = await SwitchConnection.ReadBytesAsync(offs + dlcOffs, GachaSeed.SIZE, CancellationToken.None);
+                    seeds = ReadGachaSeeds(block);
+                }
                 try
                 {
                     Gacha0.Text = $"{seeds[0].s0:X08}";
@@ -125,7 +133,7 @@ namespace Splat3GearView
 
                 ConnectionStatusText.Text = "Reading gear...";
                 GearList.Clear();
-                uint pos = 0x40; // First gear is located at offset + 0x40
+                uint pos = 0x40 + dlcOffs; // First gear is located at offset + 0x40
                 Gear gear;
 
                 int CHUNK_SIZE = 10;
@@ -160,7 +168,7 @@ namespace Splat3GearView
 
 
                 // Load Clothes
-                pos = 0x40;
+                pos = 0x40 + dlcOffs;
                 IsValid = true;
                 ConnectionStatusText.Text = "Reading clothes...";
                 do
@@ -187,7 +195,7 @@ namespace Splat3GearView
                 } while (IsValid);
 
                 // Load Shoes
-                pos = 0x40;
+                pos = 0x40 + dlcOffs;
                 IsValid = true;
                 ConnectionStatusText.Text = "Reading shoes...";
                 do
