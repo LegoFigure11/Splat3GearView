@@ -2,7 +2,6 @@
 using Splat3GearView.Resources;
 using Splat3GearView.Structures;
 using SysBot.Base;
-using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Text.Json;
 using static System.Buffers.Binary.BinaryPrimitives;
@@ -11,12 +10,12 @@ namespace Splat3GearView
 {
     public partial class MainWindow : Form
     {
-        private readonly static SwitchConnectionConfig Config = new() { Protocol = SwitchProtocol.WiFi, IP = Settings.Default.SwitchIP, Port = 6000 };
-        private readonly static SwitchSocketAsync SwitchConnection = new(Config);
+        private static SwitchConnectionConfig Config = new() { Protocol = SwitchProtocol.WiFi, IP = Settings.Default.SwitchIP, Port = 6000 };
+        private static SwitchSocketAsync SwitchConnection = SwitchSocketAsync.CreateInstance(Config);
 
         public readonly GearData GearData = new();
 
-        private List<Gear> GearList = new();
+        private List<Gear> GearList = [];
         private int index;
 
         string CachedText = string.Empty;
@@ -50,7 +49,6 @@ namespace Splat3GearView
             if (textBox.Text != "192.168.0.0")
             {
                 Settings.Default.SwitchIP = textBox.Text;
-                Config.IP = textBox.Text;
             }
             Settings.Default.Save();
         }
@@ -60,6 +58,13 @@ namespace Splat3GearView
             try
             {
                 ConnectionStatusText.Text = "Connecting...";
+                Config = new()
+                {
+                    IP = InputSwitchIP.Text,
+                    Protocol = SwitchProtocol.WiFi,
+                    Port = 6000,
+                };
+                SwitchConnection = SwitchSocketAsync.CreateInstance(Config);
                 SwitchConnection.Connect();
 
                 //var game = SwitchConnection.GetGameInfo("name", CancellationToken.None).Result;
@@ -375,12 +380,12 @@ namespace Splat3GearView
             return img;
         }
 
-        private readonly static Dictionary<string, Dictionary<string, WebsiteFormat>> WebsiteJSON = new();
+        private readonly static Dictionary<string, Dictionary<string, WebsiteFormat>> WebsiteJSON = [];
         private void ButtonDumpGear_Click(object sender, EventArgs e)
         {
-            WebsiteJSON["HaveGearHeadMap"] = new();
-            WebsiteJSON["HaveGearClothesMap"] = new();
-            WebsiteJSON["HaveGearShoesMap"] = new();
+            WebsiteJSON["HaveGearHeadMap"] = [];
+            WebsiteJSON["HaveGearClothesMap"] = [];
+            WebsiteJSON["HaveGearShoesMap"] = [];
 
             foreach (Gear gear in GearList)
             {

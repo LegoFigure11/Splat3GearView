@@ -25,7 +25,7 @@ namespace Splat3GearView.Resources
         private static List<GearDataFromJSON> GetGear(JsonNode file)
         {
             JsonArray arr = file.Root.AsArray();
-            List<GearDataFromJSON> o = new();
+            List<GearDataFromJSON> o = [];
             foreach (JsonNode? g in arr)
             {
                 GearDataFromJSON c = new();
