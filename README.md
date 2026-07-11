@@ -9,12 +9,6 @@ _A simple gear seed checker/viewer for Splatoon 3_
 
 I believe this piece of software to be risk-free as it only reads from RAM and never writes to it, but **I do not take any responsibility for any bans or damages** that may come as a result of using it. Be sensible!
 
-## Planned Features
-*No real timeframe for these*
-* ~~**Gacha seed reading**~~ and prediction
-* ~~**Images** of the gear + ability icons~~
-* **RNG Prediction** 
-
 ## Credits and thanks
 - [@kwsch](https://github.com/kwsch) for [SysBot.NET](https://github.com/kwsch/SysBot.NET) which is leveraged by this project for Switch connectivity
-- Data files are sourced from [Leanny/leanny.github.io](https://github.com/Leanny/leanny.github.io/tree/master/splat3)
+- Data files are sourced from [Leanny/splat3](https://github.com/Leanny/splat3)
