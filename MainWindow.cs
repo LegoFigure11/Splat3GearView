@@ -2,6 +2,7 @@
 using Splat3GearView.Resources;
 using Splat3GearView.Structures;
 using SysBot.Base;
+using System.Diagnostics;
 using System.Net.Sockets;
 using System.Text.Json;
 using static System.Buffers.Binary.BinaryPrimitives;
@@ -136,10 +137,33 @@ namespace Splat3GearView
                 }
                 catch { };
 
+                Gear gear;
+
+                /*var g = 0xBA28E8C8; // Seed location of known gear in RAM
+                g -= 0x80;
+
+                do
+                {
+                    var data = await SwitchConnection.ReadBytesAsync(g, 0xb0, CancellationToken.None);
+                    gear = new Gear(data)
+                    {
+                        GearType = (byte)GearTypes.Headgear
+                    };
+                    g -= 0xb0;
+                } while (gear.IsValid);
+
+                g += 0xb0;
+                g -= 0x40;
+
+                g += 0xb0;
+
+                g -= dlcOffs; // assume the gacha block check fails
+
+                Debug.WriteLine($"Gear List start: 0x{g:X8}");*/
+
                 ConnectionStatusText.Text = "Reading gear...";
                 GearList.Clear();
                 uint pos = 0x40 + dlcOffs; // First gear is located at offset + 0x40
-                Gear gear;
 
                 int CHUNK_SIZE = 10;
 
